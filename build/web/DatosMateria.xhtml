@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Materia</title>
+    </h:head>
+    <h:body>
+        <h2>INGRESAR DATOS DE LA MATERIA</h2>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="Asignatura: " value="Asignatura: "/>
+                <h:inputText id="Asignatura" label="Ingrese el nombre de la asignatura" required="true" value="#{asignaturaBean.asignatura}"></h:inputText>
+                <h:message for="Asignatura"/>
+                
+                
+                
+                <h:outputLabel for="Docente: " value="Docente" />
+                <h:selectManyCheckbox id="Docente" label="Docente(s): " value="#{asignaturaBean.docente}">
+                    <f:selectItem itemLabel="Ing. Julio Litardo" itemValue="Ing. Julio Litardo"/>
+                    <f:selectItem itemLabel="Ing. Otto Gonzalez Mendoza" itemValue="Ing. Otto Gonzalez"/>
+                    <f:selectItem itemLabel="Msc. Mariuxi Toapanta Bernabe" itemValue="Msc. Mariuxi Toapanta"/>
+                    <f:selectItem itemLabel="Ing. Cesar Alcivar" itemValue="Ing. Cesar Alcivar"/>
+                </h:selectManyCheckbox>
+                <h:message for="Docente"/>
+                
+                <h:outputLabel for="Carrera: " value="Carrera: " />
+                <h:selectOneRadio id="Carrera" value="#{asignaturaBean.carrera}">
+                    <f:selectItem itemLabel="Ingenieria en Sistemas de Informacion " itemValue="Ingenieria en Sistemas de Informacion"/>
+                    <f:selectItem itemLabel="Licenciatura en Sistemas de Informacion" itemValue="Licenciatura en Sistemas de Informacion"/>
+                </h:selectOneRadio>
+                <h:message for="Carrera"/>
+                
+                <h:outputLabel for="Ciclo: " value="Ciclo: " />
+                <h:selectOneMenu id="Ciclo" value="#{asignaturaBean.ciclo}">
+                    <f:selectItem itemLabel="2019-2020 CI" itemValue="2019-2020 CI"/>
+                    <f:selectItem itemLabel="2019-2020 CII" itemValue="2019-2020 CII"/>
+                    <f:selectItem itemLabel="2020-2021 CI" itemValue="2019-2021 CI"/>
+                </h:selectOneMenu>
+                <h:message for="Ciclo"/>
+                
+                <h:commandButton action="Consultar" value="Enviar"/>
+               
+            </h:panelGrid>
+        </h:form>
+        
+    </h:body>
+</html>
+
